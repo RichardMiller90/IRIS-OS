@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Qt6
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq \
+            qt6-base-dev \
+            qt6-wayland \
+            qt6-tools-dev \
+            libqt6opengl6-dev \
+            libgl1-mesa-dev \
+            cmake \
+            g++ \
+            ninja-build
+
+      - name: Configure CMake
+        run: cmake -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build
