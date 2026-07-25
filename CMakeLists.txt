@@ -17,16 +17,14 @@ find_package(Qt6 REQUIRED COMPONENTS
 
 # Compositor (System UI)
 qt_add_executable(mobile-compositor
-    compositor/main.cpp
-    compositor/compositor.cpp
-    compositor/compositor.h
-    compositor/appwindow.cpp
-    compositor/appwindow.h
-    compositor/gesturehandler.cpp
-    compositor/gesturehandler.h
-    compositor/virtualkeyboard.cpp
-    compositor/virtualkeyboard.h
-    resources.qrc
+    src/main.cpp
+    src/compositor.cpp
+    include/compositor.h
+    src/appwindow.cpp
+    include/appwindow.h
+    src/gesturehandler.cpp
+    include/gesturehandler.h
+    include/virtualkeyboard.h
 )
 
 target_link_libraries(mobile-compositor PRIVATE
@@ -38,13 +36,13 @@ target_link_libraries(mobile-compositor PRIVATE
 )
 
 target_include_directories(mobile-compositor PRIVATE
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
 
 # App framework library
 qt_add_library(mobileapp SHARED
-    shared/mobileapplication.cpp
-    shared/mobileapplication.h
+    src/mobileapplication.cpp
+    include/mobileapplication.h
 )
 
 target_link_libraries(mobileapp PRIVATE
@@ -54,5 +52,5 @@ target_link_libraries(mobileapp PRIVATE
 )
 
 target_include_directories(mobileapp PUBLIC
-    ${CMAKE_CURRENT_SOURCE_DIR}
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
 )
