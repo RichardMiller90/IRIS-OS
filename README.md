@@ -1,4 +1,4 @@
-# IRIS OS
+# IRIS UI
 
 A mobile operating system shell built with Qt6 Wayland Compositor for Linux.
 
