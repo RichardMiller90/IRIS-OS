@@ -1,6 +1,6 @@
 # IRIS OS
 
-A mobile operating system shell built with Qt6 Wayland Compositor for Linux, featuring an iOS 18-style virtual keyboard.
+A mobile operating system shell built with Qt6 Wayland Compositor for Linux.
 
 ## Architecture
 
@@ -11,7 +11,7 @@ iris-os/
 │   ├── compositor.h/cpp # Core compositor logic
 │   ├── appwindow.h/cpp  # Window management
 │   ├── gesturehandler.h/cpp # Touch gesture recognition
-│   └── virtualkeyboard.h/cpp # iOS 18-style virtual keyboard
+│   └── virtualkeyboard.h/cpp # virtual keyboard
 ├── qml/                 # System UI QML files
 │   ├── main.qml         # Root compositor UI
 │   ├── Keyboard.qml     # Virtual keyboard container
@@ -62,7 +62,7 @@ WAYLAND_DISPLAY=mobile-os qt-app
 ## Features
 
 - **Wayland Compositor**: Full window management for mobile
-- **iOS 18 Keyboard**: Translucent dark theme, rounded keys, predictive text, key popups
+- **Keyboard**: Translucent dark theme, rounded keys, predictive text, key popups
 - **Gesture Navigation**: Swipe up for home, edge swipe for back
 - **System UI**: Status bar, lock screen, control center, notifications
 - **App Lifecycle**: Background suspension for battery saving
